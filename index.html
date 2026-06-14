@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="ja">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>カラーピッカー</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="wrap">
+    <section class="hero">
+      <div>
+        <div class="badge">🎨 Webカラーツール</div>
+        <h1>カラーピッカー</h1>
+        <p class="lead">色名検索・近似色名表示・配色パレット生成がすぐに使える、サイト向けカラーピッカーです。</p>
+      </div>
+      <button class="btn" id="randomBtn">↻ ランダム</button>
+    </section>
+
+    <section class="grid">
+      <article class="card">
+        <div class="preview" id="preview">
+          <div class="name-panel">
+            <div class="eyebrow">最も近い色名</div>
+            <div class="row between responsive" style="margin-top:6px;">
+              <div>
+                <div class="nearest-name" id="nearestName">---</div>
+                <div class="sub" id="nearestSub">---</div>
+              </div>
+              <button class="small-btn" id="nearestHexBtn">#------</button>
+            </div>
+            <div class="sub" id="nearestMeta" style="margin-top:8px;">---</div>
+          </div>
+        </div>
+        <div class="card-body stack">
+          <div class="row responsive">
+            <label class="color-input">
+              <input type="color" id="colorInput" value="#3B82F6" />
+              <input class="hex-input" type="text" id="hexInput" value="#3B82F6" aria-label="HEXカラー" />
+            </label>
+            <button class="btn ghost" id="eyeDropperBtn">⌖ スポイト</button>
+          </div>
+
+          <div class="num-grid">
+            <label class="num"><span>R</span><input type="number" id="rInput" min="0" max="255" /></label>
+            <label class="num"><span>G</span><input type="number" id="gInput" min="0" max="255" /></label>
+            <label class="num"><span>B</span><input type="number" id="bInput" min="0" max="255" /></label>
+          </div>
+
+          <div class="slider-box">
+            <strong>HSL調整</strong>
+            <label class="slider-row"><span>色相</span><input type="range" id="hRange" min="0" max="360" /><b id="hVal">0°</b></label>
+            <label class="slider-row"><span>彩度</span><input type="range" id="sRange" min="0" max="100" /><b id="sVal">0%</b></label>
+            <label class="slider-row"><span>明度</span><input type="range" id="lRange" min="0" max="100" /><b id="lVal">0%</b></label>
+          </div>
+        </div>
+      </article>
+
+      <aside class="stack">
+        <article class="card"><div class="card-body"><h2 class="section-title">カラーコード</h2><div class="stack" id="formats"></div></div></article>
+        <article class="card"><div class="card-body"><h2 class="section-title">近い色名候補</h2><div class="stack" id="candidates"></div></div></article>
+        <article class="card"><div class="card-body"><h2 class="section-title">プリセット</h2><div class="presets" id="presets"></div></div></article>
+        <article class="card"><div class="card-body"><h2 class="section-title">履歴</h2><div class="history" id="history"></div></div></article>
+      </aside>
+    </section>
+
+    <section class="card" style="margin-top:22px;"><div class="card-body stack">
+      <div class="row between responsive">
+        <div><h2 class="section-title" style="margin-bottom:4px;">色名検索</h2><p class="lead">色名・読み・英名・HEXで検索できます。クリックするとその色に変更します。</p></div>
+        <label class="search-wrap">🔎 <input class="search" id="nameSearch" placeholder="例：桜、blue、#006AB6" /></label>
+      </div>
+      <div class="name-grid" id="nameGrid"></div>
+    </div></section>
+
+    <section class="card" style="margin-top:22px;"><div class="card-body stack">
+      <h2 class="section-title">配色パレット</h2>
+      <div class="palette-grid" id="palettes"></div>
+    </div></section>
+  </main>
+  <div class="toast" id="toast">コピーしました</div>
+  <script src="script.js"></script>
+</body>
+</html>
