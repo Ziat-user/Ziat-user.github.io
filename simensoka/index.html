@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>四面楚歌 シミュレーター</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="app">
+    <h1>四面楚歌</h1>
+    <p class="subtitle">空きマスから上下左右を見て、各方向で最初に見える石が自分の石でなければ置けます。基本ルールでは、自分の手番で合法手がなければ負けです。</p>
+
+    <div class="layout">
+      <section class="card">
+        <div class="board-wrap"><div id="board" class="board"></div></div>
+        <div class="legend">
+          <span class="legend-item"><span class="sample first"></span>青</span>
+          <span class="legend-item"><span class="sample second"></span>赤</span>
+          <span class="legend-item"><span class="sample legal"></span>合法手</span>
+          <span class="legend-item"><span class="sample forbidden"></span>初手禁止</span>
+        </div>
+      </section>
+
+      <aside class="card">
+        <div class="controls">
+          <div class="control-row">
+            <label for="sizeInput">盤面サイズ n</label>
+            <input id="sizeInput" type="number" min="1" max="30" value="5" />
+            <button id="newGameButton">新規開始</button>
+          </div>
+
+          <div class="rule-options" aria-label="追加ルール">
+            <strong>追加ルール</strong>
+            <label class="toggle-row" for="fullBoardSecondWinsInput">
+              <input id="fullBoardSecondWinsInput" type="checkbox" />
+              <span>すべて埋まったら赤の勝ち</span>
+            </label>
+            <label class="toggle-row" for="firstCannotCenterInput">
+              <input id="firstCannotCenterInput" type="checkbox" />
+              <span>青は初手で中央には置けない</span>
+            </label>
+          </div>
+
+          <div class="control-row">
+            <button id="undoButton" class="secondary">1手戻す</button>
+            <button id="randomButton" class="accent">ランダムに1手</button>
+            <button id="autoButton" class="secondary">自動プレイ開始</button>
+          </div>
+          <div class="control-row"><button id="clearButton" class="danger">盤面リセット</button></div>
+        </div>
+
+        <div class="status">
+          <div class="status-box">
+            <div id="turnText" class="turn"></div>
+            <div id="legalText"></div>
+            <div id="resultText"></div>
+            <div class="counts">
+              <div class="count-card blue">青<strong id="firstCount">0</strong></div>
+              <div class="count-card red">赤<strong id="secondCount">0</strong></div>
+              <div class="count-card">空き<strong id="emptyCount">0</strong></div>
+            </div>
+            <div id="activeRulesText" class="analysis-panel"></div>
+            <div id="theoryText" class="analysis-panel muted-panel"></div>
+          </div>
+
+          <div class="status-box">
+            <strong>ルール</strong>
+            <div class="rule">
+              石を置くマスから、上・下・左・右をそれぞれ見る。<br />
+              その方向で最初に見つかる石が自分の石なら置けない。<br />
+              石がない、または最初に見つかる石が相手の石なら、その方向は条件を満たす。<br />
+              基本ルールでは、合法手がないプレイヤーは負け。
+            </div>
+          </div>
+
+          <div class="status-box">
+            <strong>着手履歴</strong>
+            <ul id="historyList" class="history"></ul>
+          </div>
+        </div>
+      </aside>
+    </div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
