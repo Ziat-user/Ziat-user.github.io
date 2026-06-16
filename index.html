@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>My GitHub Pages</title>
+
+  <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <h1 class="site-title">My GitHub Pages</h1>
+
+      <nav class="site-nav" aria-label="メインナビゲーション">
+        <a href="./">Home</a>
+        <a href="./html/projects.html">Projects</a>
+        <a href="./ColorPicker/">ColorPicker</a>
+        <a href="./simensoka/">simensoka</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container">
+        <p class="hero-label">GitHub Pages Portfolio</p>
+        <h2>公開中のWebアプリ一覧</h2>
+        <p>
+          root直下にあるプロジェクトをまとめるトップページです。
+          ColorPicker と simensoka へここから移動できます。
+        </p>
+
+        <div class="hero-actions">
+          <a class="button primary" href="./ColorPicker/">ColorPickerを見る</a>
+          <a class="button secondary" href="./simensoka/">simensokaを見る</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="projects-section">
+      <div class="container">
+        <h2>Projects</h2>
+
+        <div class="project-grid">
+          <article class="project-card">
+            <h3>ColorPicker</h3>
+            <p>
+              色選択・カラー確認用のWebツールです。
+            </p>
+            <a href="./ColorPicker/" class="card-link">開く</a>
+          </article>
+
+          <article class="project-card">
+            <h3>simensoka</h3>
+            <p>
+              simensoka プロジェクトページです。
+            </p>
+            <a href="./simensoka/" class="card-link">開く</a>
+          </article>
+
+          <article class="project-card">
+            <h3>Projects Page</h3>
+            <p>
+              htmlフォルダ内に置いたプロジェクト一覧ページです。
+            </p>
+            <a href="./html/projects.html" class="card-link">開く</a>
+          </article>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <p>&copy; <span id="currentYear"></span> My GitHub Pages</p>
+    </div>
+  </footer>
+
+  <script src="./js/main.js"></script>
+</body>
+</html>
