@@ -3,80 +3,146 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Ziat-user</title>
-
+  <title>Ziat-user | Portfolio</title>
   <link rel="stylesheet" href="./css/style.css">
+  <link rel="stylesheet" href="./css/main-page.css">
 </head>
 <body>
+  <div class="reticle-cursor" aria-hidden="true">
+    <span class="reticle-dot"></span>
+  </div>
+
   <header class="site-header">
     <div class="container header-inner">
       <h1 class="site-title">Ziat</h1>
-
       <nav class="site-nav" aria-label="メインナビゲーション">
         <a href="./">Home</a>
-        <a href="./html/projects.html">Projects</a>
-        <a href="./ColorPicker/">ColorPicker</a>
-        <a href="./simensoka/">simensoka</a>
+        <a href="#tools">Tools</a>
+        <a href="#solo-games">Solo Games</a>
+        <a href="#team-projects">Team Projects</a>
       </nav>
     </div>
   </header>
 
   <main>
-    <section class="hero">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-orbit" aria-hidden="true"></div>
       <div class="container">
-        <p class="hero-label">GitHub Pages Portfolio</p>
-        <h2>制作物</h2>
-        <p>
-          制作物一覧
-        </p>
-
-        <div class="hero-actions">
-          <a class="button primary" href="./ColorPicker/">ColorPickerを見る</a>
-          <a class="button secondary" href="./simensoka/">simensokaを見る</a>
+        <div class="hero-panel">
+          <p class="hero-label">GitHub Pages Portfolio</p>
+          <h2 id="hero-title">Playful Works</h2>
+          <p class="hero-description">
+            自作品まとめ
+          </p>
+          <div class="hero-actions">
+            <a class="button primary" href="#solo-games">ゲームを見る</a>
+            <a class="button secondary" href="#tools">ツールを見る</a>
+          </div>
         </div>
       </div>
     </section>
 
-    <section class="projects-section">
+    <section class="projects-section" aria-labelledby="projects-title">
       <div class="container">
-        <h2>Projects</h2>
-
-        <div class="project-grid">
-          <article class="project-card">
-            <h3>ColorPicker</h3>
-            <p>
-              名前付きカラーピッカー
-            </p>
-            <a href="./ColorPicker/" class="card-link">開く</a>
-          </article>
-
-          <article class="project-card">
-            <h3>simensoka</h3>
-            <p>
-              四面楚歌
-            </p>
-            <a href="./simensoka/" class="card-link">開く</a>
-          </article>
-
-          <article class="project-card">
-            <h3>Projects Page</h3>
-            <p>
-              一覧？
-            </p>
-            <a href="./html/projects.html" class="card-link">開く</a>
-          </article>
+        <div class="section-heading">
+          <div>
+            <p class="hero-label">Works Directory</p>
+            <h2 id="projects-title">制作物一覧</h2>
+          </div>
         </div>
+
+        <section id="tools" class="category" aria-labelledby="tools-title">
+          <h3 id="tools-title" class="category-title category-title-tools">ツール</h3>
+          <div class="project-grid">
+            <article class="project-card">
+              <div class="thumbnail placeholder">
+                <!-- 画像を貼る場合：下の1行のコメントを外して src を差し替え -->
+                <!-- <img src="./ColorPicker/thumbnail.png" alt="名前付きColor Pickerのサムネイル"> -->
+                Color Picker
+              </div>
+              <div class="card-body">
+                <h3>名前付きColor Picker</h3>
+                <p>最も近似している色の名前を出してくれるカラーピッカー</p>
+                <ul class="tag-list" aria-label="タグ">
+                  <li>Tool</li>
+                  <li>Color</li>
+                  <li>Utility</li>
+                </ul>
+                <a href="./ColorPicker/" class="card-link">開く →</a>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section id="solo-games" class="category" aria-labelledby="solo-games-title">
+          <h3 id="solo-games-title" class="category-title category-title-solo">個人制作ゲーム</h3>
+          <div class="project-grid">
+            <article class="project-card">
+              <div class="thumbnail placeholder">
+                <img src="./image/simensoka.png" alt="四面楚歌のサムネイル">
+                四面楚歌
+              </div>
+              <div class="card-body">
+                <h3>四面楚歌</h3>
+                <p>シンプルなルールの完全実力ボードゲーム</p>
+                <ul class="tag-list" aria-label="タグ">
+                  <li>Solo Game</li>
+                  <li>Original</li>
+                </ul>
+                <a href="./simensoka/" class="card-link">開く →</a>
+              </div>
+            </article>
+
+            <article class="project-card">
+              <div class="thumbnail placeholder">
+                <img src="./image/bereflect.png" alt="be reflectのサムネイル">
+                be reflect
+              </div>
+              <div class="card-body">
+                <h3>be reflect</h3>
+                <p>シンプルなハイパーカジュアル</p>
+                <ul class="tag-list" aria-label="タグ">
+                  <li>Solo Game</li>
+                  <li>Reflection</li>
+                </ul>
+                <a href="./bereflect/" class="card-link">開く →</a>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section id="team-projects" class="category" aria-labelledby="team-projects-title">
+          <h3 id="team-projects-title" class="category-title category-title-team">チーム制作</h3>
+          <div class="project-grid">
+            <article class="project-card">
+              <div class="thumbnail placeholder">
+                <img src="./image/hoppingspringname.png" alt="hopping springのサムネイル">
+                hopping spring
+              </div>
+              <div class="card-body">
+                <h3>hopping spring</h3>
+                <p>短期制作イベントgamejamで制作を行ったハイパーカジュアル</p>
+                <ul class="tag-list" aria-label="タグ">
+                  <li>Team</li>
+                  <li>Hackathon</li>
+                  <li>Unityroom</li>
+                </ul>
+                <a href="https://unityroom.com/games/hs_tgs2025w" class="card-link" target="_blank" rel="noopener noreferrer">Unityroomで開く →</a>
+              </div>
+            </article>
+          </div>
+        </section>
       </div>
     </section>
   </main>
 
   <footer class="site-footer">
     <div class="container">
-      <p>&copy; <span id="currentYear"></span> My GitHub Pages</p>
-    </div>
+      <p>&copy; <span id="currentYear"></span> Ziat-user/p>
+    </div> 
   </footer>
 
   <script src="./js/main.js"></script>
+  <script src="./js/main-page.js"></script>
 </body>
 </html>

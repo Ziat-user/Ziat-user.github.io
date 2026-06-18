@@ -1,13 +1,27 @@
-# Ziat-user.github.io
-メインページ<br>
-https://ziat-user.github.io/
-<br>
-## 名前付きカラーピッカー  
-https://ziat-user.github.io/ColorPicker  
-<br>
-[色の名前出典](https://www.i-iro.com/dic/)
+# 分割版メインページ
 
-## 四面楚歌  
-二人零和有限確定完全情報ゲーム  
+## 配置先
 
-https://ziat-user.github.io/simensoka
+この zip の中身を GitHub Pages のルートに配置してください。
+
+```text
+/
+├─ index.html
+├─ css/
+│  └─ main-page.css
+└─ js/
+   └─ main-page.js
+```
+
+既存の `./css/style.css` と `./js/main.js` はそのまま残して使う想定です。
+不要なら `index.html` から該当の読み込み行を削除してください。
+
+## サムネイルの貼り方
+
+各カードの `.thumbnail` 内にあるコメントアウト済みの `<img>` を有効化して、画像パスを差し替えてください。
+
+例：
+
+```html
+<img src="./simensoka/thumbnail.png" alt="四面楚歌のサムネイル">
+```
